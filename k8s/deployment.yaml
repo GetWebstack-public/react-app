@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-infra-front
+  name: gws-playground-front
   labels:
-    app: test-infra-front
+    app: gws-playground-front
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: test-infra-front
+      app: gws-playground-front
   template:
     metadata:
       labels:
-        app: test-infra-front
+        app: gws-playground-front
     spec:
       containers:
       - name: frontend
-        image: test-infra-front:latest
+        image: gws-playground-front:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
@@ -24,9 +24,9 @@ spec:
           protocol: TCP
         env:
         - name: API_URL
-          value: "https://test-infra-api.test-project-infra.local.getwebstack.dev:9443"
+          value: "https://gws-playground-api.gws-playground.local.getwebstack.dev:9443"
         resources:
-          requests``:
+          requests:
             memory: "128Mi"
             cpu: "100m"
           limits:
@@ -48,9 +48,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: test-infra-front
+  name: gws-playground-front
   labels:
-    app: test-infra-front
+    app: gws-playground-front
 spec:
   type: ClusterIP
   ports:
@@ -59,4 +59,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: test-infra-front
+    app: gws-playground-front
