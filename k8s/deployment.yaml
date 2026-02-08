@@ -15,7 +15,7 @@ spec:
         app: gws-playground-front
     spec:
       containers:
-      - name: frontend
+      - name: gws-playground-front
         image: gws-playground-front:latest
         imagePullPolicy: IfNotPresent
         ports:
