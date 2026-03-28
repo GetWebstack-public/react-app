@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 // Get API URL from runtime config (injected at container startup)
-const API_URL = window.ENV?.API_URL || 'http://localhost:3001';
+const API_URL = 'https://express-server.react-express-mono-repo.local.getwebstack.dev:9443';
 
 function App() {
   const [message, setMessage] = useState('');
