@@ -14,11 +14,11 @@ This will start the frontend along with all other services defined in the worksp
 
 The app will be available at: https://gws-playground-front.gws-playground.local.getwebstack.dev:9443/
 
-## Available Scripts
+## GWS Commands
 
-- `npm start` - Run development server
-- `npm build` - Create production build
-- `npm test` - Run tests
+- `gws init` - Initialize the workspace
+- `gws status` - Check the status of all services
+- `gws logs` - View logs for all services
 
 ## Tech Stack
 
