@@ -10,9 +10,7 @@ From the project root directory:
 gws up
 ```
 
-This will start the frontend along with all other services defined in the workspace.
-
-The app will be available at: https://gws-playground-front.gws-playground.local.getwebstack.dev:9443/
+This will build and deploy the frontend to a local Kubernetes cluster along with all other services defined in the workspace.
 
 ## GWS Commands
 
@@ -25,10 +23,3 @@ The app will be available at: https://gws-playground-front.gws-playground.local.
 - React 18
 - React Scripts 5.0
 - Testing Library
-
-## Docker
-
-```bash
-docker build -t gws-playground-front .
-docker run -p 3000:3000 gws-playground-front
-```
