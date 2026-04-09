@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     // Fetch message from API
-    fetch(`${API_URL}/api/message`)
+    fetch(`${API_URL}/api/message`, { credentials: 'include' })
       .then(response => response.json())
       .then(data => {
         setMessage(data.message);
@@ -30,7 +30,7 @@ function App() {
 
   const fetchEnvVars = () => {
     setEnvLoading(true);
-    fetch(`${API_URL}/api/env-test`)
+    fetch(`${API_URL}/api/env-test`, { credentials: 'include' })
       .then(response => response.json())
       .then(data => {
         setEnvData(data);
@@ -45,7 +45,7 @@ function App() {
   const handleUserSubmit = (e) => {
     e.preventDefault();
     if (userName.trim()) {
-      fetch(`${API_URL}/api/users/${userName}`)
+      fetch(`${API_URL}/api/users/${userName}`, { credentials: 'include' })
         .then(response => response.json())
         .then(data => {
           setUserGreeting(data.greeting);
