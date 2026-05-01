@@ -1,26 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: react-app
-  namespace: react-app
+  name: gws-playground-front
   labels:
-    app: react-app
+    app: gws-playground-front
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: react-app
+      app: gws-playground-front
   template:
     metadata:
       labels:
-        app: react-app
+        app: gws-playground-front
     spec:
       containers:
-      - name: react-app
-        image: react-app
+      - name: gws-playground-front
+        image: gws-playground-front
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
           name: http
           protocol: TCP
+        env:
+        - name: REACT_APP_API_URL
+          value: "https://gws-playground-api.gws-playground.local.getwebstack.dev"
       restartPolicy: Always
